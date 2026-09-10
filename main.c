@@ -12,10 +12,11 @@
 #define GOLD 9
 #define CARBON 10
 
-void main()
+int main()
 {
 	int current_day = 1;
 	int current_hour = 8;
 	
 	int inventory[ARR_SIZE] = {0};
+	return 0;
 }
