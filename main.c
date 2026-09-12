@@ -28,5 +28,25 @@ int main()
 	inventory[8] = IRON;
 	inventory[9] = GOLD;
 
+	printf("Добро пожаловать в меню игры \"Весёлый фермер\"!\n");
+
+	int choice;
+	while (1)
+	{
+		printf("Для выбора действия введите цифру от 0 до 6 >>");
+		while (scanf("%d", &choice) != 1 || choice < 0 || choice > 6)
+		{
+			printf("Ошибка! Введите цифру от 0 до 6 >>");
+			while (getchar() != '\n');
+		}
+
+		switch (choice)
+		{
+			case 0:
+				printf("Выход из игры...");
+				return 0;
+		}
+	}
+
 	return 0;
 }
