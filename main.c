@@ -10,6 +10,7 @@
 #define CARBON 7
 #define IRON 8
 #define GOLD 9
+#define DAY_HOURS 24
 
 int main()
 {
@@ -45,6 +46,35 @@ int main()
 			case 0:
 				printf("Выход из игры...");
 				return 0;
+			case 1:
+				if (current_hour <= 9)
+				{
+					printf("Текущее время: День %d, 0%d:00\n", current_day, current_hour);
+				}
+				else
+					printf("Текущее время: День %d, %d:00\n", current_day, current_hour);
+				break;
+			case 2:
+				int work_hours;
+				printf("Введите количество часов, которые хотите потратить на работу >>");
+
+				while (scanf("%d", &work_hours) != 1)
+				{
+					printf("Ошибка! Количество часов должно быть целым числом\n");
+					printf("Введите количество часов, которые хотите потратить на работу >>");
+					while (getchar() != '\n');
+				}
+
+				current_hour += work_hours;
+				if (current_hour >= DAY_HOURS)
+				{
+					int full_days_count = current_hour / DAY_HOURS;
+					current_day += full_days_count;
+					current_hour -= full_days_count * DAY_HOURS;
+				}
+
+				printf("Время успешно обновлено!\n");
+				break;
 		}
 	}
 
