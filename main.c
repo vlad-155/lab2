@@ -21,6 +21,7 @@ int main()
 
 	inventory[0] = WOOD;
 	inventory[1] = CARBON;
+	inventory[2] = STONE;
 	inventory[3] = IRON;
 	inventory[4] = CLAY;
 	inventory[5] = CARBON;
@@ -74,6 +75,44 @@ int main()
 				}
 
 				printf("Время успешно обновлено!\n");
+				break;
+			case 3:
+				for (int i = 0; i < ARR_SIZE; i++)
+				{
+					switch (inventory[i])
+					{
+						case WOOD:
+							printf("Слот %d: [1] (Дерево)\n", i);
+							break;
+						case STONE:
+							printf("Слот %d: [2] (Камень)\n", i);
+							break;
+						case SEEDS:
+							printf("Слот %d: [3] (Семена)\n", i);
+							break;
+						case GRASS:
+							printf("Слот %d: [4] (Трава)\n", i);
+							break;
+						case CLAY:
+							printf("Слот %d: [5] (Глина)\n", i);
+							break;
+						case LEAF:
+							printf("Слот %d: [6] (Листья)\n", i);
+							break;
+						case CARBON:
+							printf("Слот %d: [7] (Уголь)\n", i);
+							break;
+						case IRON:
+							printf("Слот %d: [1] (Железо)\n", i);
+							break;
+						case GOLD:
+							printf("Слот %d: [1] (Золото)\n", i);
+							break;
+						default:
+							printf("Слот %d: [0]\n", i);
+							break;
+					}
+				}
 				break;
 		}
 	}
