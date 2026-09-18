@@ -138,6 +138,20 @@ int main()
 				inventory[index] = item_id;
 				printf("Инвентарь успешно изменён!\n");
 				break;
+			case 5:
+				int ind;
+				printf("Введите индекс слота от 0 до 9 >>");
+
+				while (scanf("%d", &ind) < 0 || ind > ARR_SIZE - 1)
+				{
+					printf("Ошибка! Индекс не может быть меньше 0 и больше %d\n", ARR_SIZE - 1);
+					printf("Введите индекс слота от 0 до 9 >>");
+					while (getchar() != '\n');
+				}
+
+				inventory[index] = EMPTY;
+				printf("Предмет удалён из инвентаря.\n");
+				break;
 		}
 	}
 
