@@ -114,6 +114,30 @@ int main()
 					}
 				}
 				break;
+			case 4:
+				int index;
+				printf("Введите индекс слота от 0 до 9 >>");
+
+				while (scanf("%d", &index) < 0 || index > ARR_SIZE - 1)
+				{
+					printf("Ошибка! Индекс не может быть меньше 0 и больше %d\n", ARR_SIZE - 1);
+					printf("Введите индекс слота от 0 до 9 >>");
+					while (getchar() != '\n');
+				}
+
+				int item_id;
+				printf("Введите ID предмета от 0 до 9 >>");
+
+				while (scanf("%d", &item_id) < 0 || item_id > 9)
+				{
+					printf("Ошибка! ID предмета не может быть меньше 0 и больше %d\n", ARR_SIZE - 1);
+					printf("Введите ID предмета от 0 до 9 >>");
+					while (getchar() != '\n');
+				}
+
+				inventory[index] = item_id;
+				printf("Инвентарь успешно изменён!\n");
+				break;
 		}
 	}
 
