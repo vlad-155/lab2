@@ -59,7 +59,6 @@ int main()
 					printf("Текущее время: День %d, %d:00\n", current_day, current_hour);
 				break;
 			case 2:
-				int work_hours;
 				printf("Введите количество часов, которые хотите потратить на работу >>");
 
 				while (scanf("%d", &work_hours) != 1)
@@ -118,7 +117,6 @@ int main()
 				}
 				break;
 			case 4:
-				int index;
 				printf("Введите индекс слота от 0 до 9 >>");
 
 				while (scanf("%d", &index) < 0 || index > ARR_SIZE - 1)
@@ -128,7 +126,6 @@ int main()
 					while (getchar() != '\n');
 				}
 
-				int item_id;
 				printf("Введите ID предмета от 0 до 9 >>");
 
 				while (scanf("%d", &item_id) < 0 || item_id > 9)
@@ -142,10 +139,9 @@ int main()
 				printf("Инвентарь успешно изменён!\n");
 				break;
 			case 5:
-				int ind;
 				printf("Введите индекс слота от 0 до 9 >>");
 
-				while (scanf("%d", &ind) < 0 || ind > ARR_SIZE - 1)
+				while (scanf("%d", &index) < 0 || index > ARR_SIZE - 1)
 				{
 					printf("Ошибка! Индекс не может быть меньше 0 и больше %d\n", ARR_SIZE - 1);
 					printf("Введите индекс слота от 0 до 9 >>");
@@ -155,6 +151,27 @@ int main()
 				inventory[index] = EMPTY;
 				printf("Предмет удалён из инвентаря.\n");
 				break;
+			case 6:
+				printf("Введите ID предмета от 0 до 9 >>");
+
+				while (scanf("%d", &item_id) < 0 || item_id > 9)
+				{
+					printf("Ошибка! ID предмета не может быть меньше 0 и больше %d\n", ARR_SIZE - 1);
+					printf("Введите ID предмета от 0 до 9 >>");
+					while (getchar() != '\n');
+				}
+
+				counter = 0;
+				printf("Предмет находится в следующих слотах: ");
+				for (int i = 0; i < ARR_SIZE; i++)
+				{
+					if (inventory[i] == item_id)
+					{
+						counter++;
+						printf("%d ", i);
+					}
+				}
+				printf("\nОбщее количество включений предмета: %d\n", counter);
 		}
 	}
 
