@@ -33,6 +33,9 @@ int main()
 	printf("Добро пожаловать в меню игры \"Весёлый фермер\"!\n");
 
 	int choice;
+	int work_hours;
+	int index, item_id;
+	int counter;
 	while (1)
 	{
 		printf("Для выбора действия введите цифру от 0 до 6 >>");
